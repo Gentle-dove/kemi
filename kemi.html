@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Kemi</title>
+  <style>
+    body {
+      background: url(kemi.jpeg) no-repeat left center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .cake {
+      margin: 0 auto;
+      width: 200px;
+      height: 180px;
+      position: relative;
+    }
+
+    .layer {
+      background: #ff66b2;
+      border: 3px solid #d94f8f;
+      border-radius: 10px;
+      margin: 4px auto;
+    }
+
+    .layer1 {
+      width: 200px;
+      height: 60px;
+    }
+
+    .layer2 {
+      width: 150px;
+      height: 50px;
+    }
+
+    .layer3 {
+      width: 100px;
+      height: 40px;
+    }
+
+    .candle {
+      width: 9px;
+      height: 25px;
+      background: #fff;
+      margin: 0 auto;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .flame {
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.5s infinite;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.2); }
+      100% { transform: translateX(-50%) scale(1); }
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #270115;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉🎂 World Kemi Day 🎂🎉</h1>
+
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+    <div class="layer layer3"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer1"></div>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const message = "🎉 Happy Birthday, Kemi! 🎈\nWishing you joy, love, and happiness! Enjoy Adulthood!";
+    const messageElement = document.getElementById("message");
+
+    let i = 0;
+    function typeMessage() {
+      if (i < message.length) {
+        messageElement.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeMessage, 80); // Typing effect
+      }
+    }
+
+    typeMessage();
+  </script>
+</body>
+</html>
